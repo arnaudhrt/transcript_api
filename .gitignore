@@ -1,0 +1,6 @@
+.env
+uploads/
+app.log
+transcript-api
+*.exe
+.DS_Store
