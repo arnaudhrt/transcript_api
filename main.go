@@ -44,6 +44,9 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(CORSMiddleware)
 	r.Get("/health", h.Health)
+	r.Options("/upload", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusNoContent)
+	})
 	r.Post("/upload", h.Upload)
 
 	slog.Info("starting server", "port", cfg.Port)
